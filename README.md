@@ -1,5 +1,8 @@
 # MT7622-mtkwifi
 
+MEDIATEK WIFI DRIVER FOR OpenWrt
+
+
 put the mtk folder in /package,follow the path to the target folder and deposit the files respectively. inside we have a bootcount to replace and a patch to allow the mt7622 radio to scan for other access points.
 luci-app-mtk custom for the mt7622 and mt7915 radio
 
