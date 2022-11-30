@@ -1,0 +1,17 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+
+boot() {
+        ifconfig apclii0 up
+	ifconfig rai0 up
+	ifconfig apcli0 up
+	ifconfig ra0 up
+	/etc/init.d/apcli.sh start
+	mtkwifi reload
+	case $(board_name) in
+	linksys,e8450)
+		mtd erase senv || true
+		;;
+	esac
+}
