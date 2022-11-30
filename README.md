@@ -6,6 +6,6 @@ luci-app-mtk custom for the mt7622 and mt7915 radio
 
 please i'll not take care of updating this repo, is tested on openwrt 22.03.2
 
-this will work on this kernel, test if you will use on 5.15
+this will work on this kernel, testyourself if you will be on 5.15.x kernel
 
-just make sure the patch for mt7622 is in the right kernel directoy
+just make sure the .patch for mt7622 is in the right kernel directoy
