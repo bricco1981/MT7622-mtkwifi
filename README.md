@@ -13,5 +13,5 @@ this will work on this kernel, test yourself if you will be on 5.15.x kernel
 
 just make sure the .patch for mt7622 is in the right kernel directory
 
-there is also a compiled version of OpenWrt-22.03.2
+there is also a compiled version of OpenWrt-22.03.2 for xiaomi ax3200
 
