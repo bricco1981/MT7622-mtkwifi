@@ -20,3 +20,5 @@ there is also a compiled version of OpenWrt-22.03.2 for xiaomi ax3200
 3) ./scripts/feeds update -a
 4) ./scripts/feeds install -a
 5) make        or make your openwrt command
+
+"forse la fine"
