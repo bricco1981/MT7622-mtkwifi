@@ -15,3 +15,8 @@ just make sure the .patch for mt7622 is in the right kernel directory
 
 there is also a compiled version of OpenWrt-22.03.2 for xiaomi ax3200
 
+1) clone openwrt repo!
+2) put all the files right,
+3) ./scripts/feeds update -a
+4) ./scripts/feeds install -a
+5) make        or make your openwrt command
