@@ -20,7 +20,8 @@ there is also a compiled version of OpenWrt-22.03.2 for xiaomi ax3200
 3) ./scripts/feeds update -a
 4) ./scripts/feeds install -a
 5) make menuconfig
-6) select luci app mtwifi,m7622 and mt_wifi in kernel module, and configure the radios
-7) make        or make your openwrt command
+6) select luci app mtwifi,select m7622 and mt_wifi in kernel module, in extra package select l1profile
+7) make download
+8) make
 
 "forse la fine"
