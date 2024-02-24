@@ -986,7 +986,7 @@ config MTK_MIN_PHY_RATE_SUPPORT
 config MTK_FAST_UP_RATE_SUPPORT
         bool "Fast UP rate support"
         depends on MTK_MT_AP_SUPPORT
-        default n
+        default y
 
 config MTK_CON_WPS_SUPPORT
 	bool "Concurrent WPS Support"

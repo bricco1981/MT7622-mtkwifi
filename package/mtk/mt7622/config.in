@@ -789,7 +789,7 @@ config MTK_APSOC_WIFI_MIN_PHY_RATE_SUPPORT
 config MTK_APSOC_WIFI_FAST_UP_RATE_SUPPORT
 	bool "Fast UP rate support"
 	depends on MTK_APSOC_WIFI_MT_AP_SUPPORT
-	default n
+	default y
 
 config MTK_APSOC_WIFI_CON_WPS_SUPPORT
 	bool "Concurrent WPS Support"
