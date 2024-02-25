@@ -1,14 +1,21 @@
 #!/bin/sh /etc/rc.common
 
 START=99
-
+BR_MARKER_FILE="/tmp/mtwifi_bridge_done.marker"
 boot() {
-        ifconfig apclii0 up
+    ifconfig apclii0 up
 	ifconfig rai0 up
 	ifconfig apcli0 up
 	ifconfig ra0 up
 	/etc/init.d/apcli.sh start
 	mtkwifi reload
+	if [ ! -f "$BR_MARKER_FILE" ]; then  
+		uci add_list network.cfg030f15.ports="ra0"
+		uci add_list network.cfg030f15.ports="rai0"
+		uci commit network
+		/etc/init.d/network reload
+        touch "$BR_MARKER_FILE"
+    fi
 	case $(board_name) in
 	linksys,e8450)
 		mtd erase senv || true
