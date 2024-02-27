@@ -1,5 +1,8 @@
 # MT7622-mtkwifi
 
+please do not keep setting if you like test this builds.
+
+
 MEDIATEK WIFI DRIVER FOR OpenWrt
 
 
