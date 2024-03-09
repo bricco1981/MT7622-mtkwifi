@@ -6,12 +6,13 @@ PKG_MAINTAINER:=Hua Shao <nossiac@163.com>
 
 LUCI_TITLE:=LuCI support for mt wifi driver
 LUCI_PKGARCH:=all
-LUCI_DEPENDS:=@TARGET_mediatek +luci-lib-jquery-1-4
+LUCI_DEPENDS:=@TARGET_mediatek +luci-lib-jquery-1-4 +wireless-tools
 PKG_VERSION:=1
 PKG_RELEASE:=8
 
 define Package/luci-app-mtwifi
 endef
+
 
 define Package/l1profile
   TITLE:=l1profile init script
