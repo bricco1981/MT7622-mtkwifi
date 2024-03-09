@@ -88,26 +88,26 @@ table {
 	<form method="post" name="cbi" action="<%=luci.dispatcher.build_url("admin", "network", "wifi", "apcli_cfg", devname, vifname)%>" enctype="multipart/form-data" onreset="return cbi_validate_reset(this)" onsubmit="return cbi_validate_form(this, 'Some fields are invalid, cannot save values!')" autocomplete="off">
 
 		<fieldset class="cbi-section" id="vif-cfg-apcli">
-			<legend> <a class="ren" name="apcli_scan_section">AP-Client - <%=devname.."@"..vifname%> </a></legend>
+			<legend> <a class="ren" name="apcli_scan_section"><%:AP-Client%> - <%=devname.."@"..vifname%> </a></legend>
 			<br />
 			<% if cfgs.WirelessMode == "10" then %>
 			<p class="left">
-				<input disabled="disabled" id="scan" type="button" class="cbi-button cbi-button-find" onclick="get_ap_list('<%=vifname%>')" value="Scan Wireless Network" /><span style="color:red;">&ensp; Search does not work if Mode is selected "10 - G/N mixed".</span>
+				<input disabled="disabled" id="scan" type="button" class="cbi-button cbi-button-find" onclick="get_ap_list('<%=vifname%>')" value="<%:Scan Wireless Network%>" /><span style="color:red;">&ensp; Search does not work if Mode is selected "10 - G/N mixed".</span>
 			</p>
 			<% else %>
 			<p class="left">
-				<input id="scan" type="button" class="cbi-button cbi-button-find" onclick="get_ap_list('<%=vifname%>')" value="Scan Wireless Network" />
+				<input id="scan" type="button" class="cbi-button cbi-button-find" onclick="get_ap_list('<%=vifname%>')" value="<%:Scan Wireless Network%>" />
 			</p>
 			<% end %>
 			<div id="loading2" style="display:none;">
 			<img src="<%=resource%>/icons/loading.gif" alt="<%:Loading%>" style="vertical-align:middle;" />
-				&nbsp;&nbsp;&nbsp; Please waiting while the page is loading......
+				&nbsp;&nbsp;&nbsp; <%:Please waiting while the page is loading......%>
 			</div>
 			<div id="aplist">
 			</div>
 		</fieldset>
 		<fieldset class="cbi-section" id="vif-cfg-apcli-config">
-			<legend> <a name="apcli_cfg_section"> Connection Configurations</a> </legend>
+			<legend> <a name="apcli_cfg_section"> <%:Connection Configurations%></a> </legend>
 			<table class="cbi-section-table">
 				<tbody>
 				<tr>
@@ -119,7 +119,7 @@ table {
 				<tr>
 					<td>Root AP Channel</td>
 					<td>
-						<input type="text" name="Channel" id="Channel" value="<%=cfgs.Channel%>"/><span class="he1">This will overwrite ap channel.</span>
+						<input type="text" name="Channel" id="Channel" value="<%=cfgs.Channel%>"/><span class="he1"><%:This will overwrite ap channel.%></span>
 					</td>
 					
 				</tr>
@@ -207,10 +207,10 @@ table {
 		</fieldset>
 		
 		<div class="cbi-page-actions" id="apcli_form_buttons">
-			<input class="cbi-button cbi-button-link" value="Back" type="button" onclick="location.href='<%=luci.dispatcher.build_url("admin", "network", "wifi")%>'" />
-			<input class="cbi-button cbi-button-positive" value="Save" type="submit" />
-			<input class="cbi-button cbi-button-apply" name="__apply" value="Save & Apply" type="submit" onclick='save_apply()' />
-			<input class="cbi-button cbi-button-reset" value="Reset" type="reset" />
+			<input class="cbi-button cbi-button-link" value="<%:Back%>" type="button" onclick="location.href='<%=luci.dispatcher.build_url("admin", "network", "wifi")%>'" />
+			<input class="cbi-button cbi-button-positive" value="<%:Save%>" type="submit" />
+			<input class="cbi-button cbi-button-apply" name="__apply" value="<%:Save & Apply%>" type="submit" onclick='save_apply()' />
+			<input class="cbi-button cbi-button-reset" value="<%:Reset%>" type="reset" />
 		</div>
 	</form>
 </div>

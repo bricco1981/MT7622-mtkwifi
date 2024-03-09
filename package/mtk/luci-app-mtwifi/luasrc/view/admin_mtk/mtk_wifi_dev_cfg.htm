@@ -77,12 +77,12 @@ table {
 <div id="container">
 	<div id="loading" style="margin-top: 1em; display: none;">
 	<img src="<%=resource%>/icons/loading.gif" alt="<%:Loading%>" />
-		&nbsp;&nbsp;&nbsp; Please waiting......
+		&nbsp;&nbsp;&nbsp; <%:Please waiting......%>
 	</div>
 
 	<form method="post" name="cbi" action="<%=luci.dispatcher.build_url("admin", "network", "wifi", "dev_cfg", devname)%>" enctype="multipart/form-data" onreset="return cbi_validate_reset(this)" onsubmit="return cbi_validate_form(this, 'Some fields are invalid, cannot save values!')" autocomplete="off">
 		<fieldset class="cbi-section">
-			<legend><span class="ren"> Device Configurations - <%=devname%></span> 
+			<legend><span class="ren"> <%:Device Configurations%> - <%=devname%></span> 
 	<%
 	local diff = mtkwifi.diff_profile(dev.profile)
 	if next(diff) ~= nil then
@@ -617,18 +617,18 @@ table {
 
 		</fieldset>
 		<div class="cbi-page-actions">
-			<input class="cbi-button cbi-button-link" value="Back" type="button" onclick="location.href='<%=luci.dispatcher.build_url("admin", "network", "wifi")%>'" />
-			<input class="cbi-button cbi-button-positive" value="Save" type="submit" />
-			<input class="cbi-button cbi-button-apply" value="Save & Apply" type="submit" onclick='save_apply()' />
-			<input class="cbi-button cbi-button-reset" value="Reset" type="reset" />
+			<input class="cbi-button cbi-button-link" value="<%:Back%>" type="button" onclick="location.href='<%=luci.dispatcher.build_url("admin", "network", "wifi")%>'" />
+			<input class="cbi-button cbi-button-positive" value="<%:Save%>" type="submit" />
+			<input class="cbi-button cbi-button-apply" value="<%:Save & Apply%>" type="submit" onclick='save_apply()' />
+			<input class="cbi-button cbi-button-reset" value="<%:Reset%>" type="reset" />
 		</div>
 	</form>
 
 
 	<form method="post" name="cbi2" action="<%=luci.dispatcher.build_url("admin", "network", "wifi", "dev_cfg_raw", devname)%>" enctype="multipart/form-data" onreset="return cbi_validate_reset(this)" onsubmit="return cbi_validate_form(this, 'Some fields are invalid, cannot save values!')" autocomplete="off">
 		<fieldset class="cbi-section">
-			<legend> Raw Configurations ( Edit WiFi profile directly )</legend>
-			<p> <span style="color: red"><b>WARNING</b></span> : DO NOT MESS WITH IT IF YOU DON'T UNDERSTAND IT!</p>
+			<legend> <%:Raw Configurations ( Edit WiFi profile directly )%></legend>
+			<p> <span style="color: red"><b><%:WARNING%></b></span> : <%:DO NOT MESS WITH IT IF YOU DON'T UNDERSTAND IT%>!</p>
 			<textarea name="raw" id="raw" style="width:98%; height: 200px;"><%
 				local fd = io.open(dev.profile)
 				for line in fd:lines() do
@@ -637,9 +637,9 @@ table {
 			%></textarea>
 		</fieldset>
 		<div class="cbi-page-actions">
-			<input class="cbi-button cbi-button-reset" value="Reset" onclick="location.href='<%=luci.dispatcher.build_url("admin", "network", "wifi", "dev_cfg_view", devname)%>'" type="button" />
-			<input class="cbi-button cbi-button-save" id="save" value="Save" type="submit" onclick="if (confirm('You are going to overwrite the profile directly, are you sure?')) return true; else return false;" />
-			<input class="cbi-button cbi-button-apply" id="reset" value="Restore Profile to Factory Setting" type="button" onclick="if (confirm('You are going to reset the profile of <%=devname%> to factory default, are you sure?')) location.href='<%=luci.dispatcher.build_url("admin", "network", "wifi", "dev_cfg_reset", devname)%>'" />
+			<input class="cbi-button cbi-button-reset" value="<%:Reset%>" onclick="location.href='<%=luci.dispatcher.build_url("admin", "network", "wifi", "dev_cfg_view", devname)%>'" type="button" />
+			<input class="cbi-button cbi-button-save" id="save" value="<%:Save%>" type="submit" onclick="if (confirm('You are going to overwrite the profile directly, are you sure?')) return true; else return false;" />
+			<input class="cbi-button cbi-button-apply" id="reset" value="<%:Restore Profile to Factory Setting%>" type="button" onclick="if (confirm('You are going to reset the profile of <%=devname%> to factory default, are you sure?')) location.href='<%=luci.dispatcher.build_url("admin", "network", "wifi", "dev_cfg_reset", devname)%>'" />
 		</div>
 	</form>
 </div>
